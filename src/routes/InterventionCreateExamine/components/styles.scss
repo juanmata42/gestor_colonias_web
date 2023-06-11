@@ -1,0 +1,54 @@
+@use '../../../styles/breakpoints';
+@use '../../../styles/fonts';
+@use '../../../styles/colors';
+
+.intervention__main-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (max-width: breakpoints.$mobile) {}
+}
+
+.intervention__info-body {
+    display: flex;
+    text-decoration: none;
+    font-weight: normal;
+    box-shadow: 2px 2px 14px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 0 10px 10px 10px;
+    padding: 20px;
+    max-width: calc(breakpoints.$tablet - 60px);
+    width: calc(100% - 60px);
+    margin: 30px;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    position: relative;
+    justify-content: space-between;
+
+    @media screen and (max-width: breakpoints.$mobile) {
+        max-width: calc(breakpoints.$mobile - 30px);
+        width: calc(100% - 30px);
+    }
+
+    .examineIntervention__info-container {
+        padding: 10px;
+        gap: 10px;
+        display: flex;
+        border-radius: 10px;
+        border: none;
+        box-shadow: 1px 1px 7px 0 rgba(0, 0, 0, 0.1);
+        padding: 10px;
+
+        .examineIntervention__info-label {
+            font-size: 16px;
+            font-family: fonts.$font-normal;
+            font-weight: fonts.$bold;
+
+            @media screen and (max-width: breakpoints.$mobile) {
+                font-size: 13px;
+            }
+        }
+    }
+}

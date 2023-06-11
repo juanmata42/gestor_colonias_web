@@ -1,0 +1,167 @@
+@use '../../../styles/breakpoints';
+@use '../../../styles/fonts';
+@use '../../../styles/colors';
+
+.alertsNews__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+
+.alertsNews__header {
+    max-width: breakpoints.$tablet;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 46px;
+    gap: 10px;
+
+    @media screen and (max-width: breakpoints.$mobile) {
+        flex-direction: column;
+    }
+}
+
+.alertsNews__header-search {
+    max-width: 334px;
+    width: 100%;
+    height: 48px;
+    display: flex;
+    outline: none;
+    line-height: 48px;
+    padding-top: 3px;
+    padding-left: 43px;
+    background: url('../../../assets/searchIcon_gray.svg') no-repeat 15px;
+    background-size: 17px;
+}
+
+.alertsNews__header-search:focus {
+    border: solid 1px colors.$dark-gray;
+}
+
+.alertsNews__header-selector {
+    max-width: 334px;
+    width: 100%;
+    border-radius: 10px;
+    height: 48px;
+    padding-left: 15px;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+    appearance: none;
+    background: url('../../../assets/down-arrow-simple-red.svg') no-repeat;
+    background-size: 15px;
+    background-position: right 10px center;
+    font-size: 15px;
+}
+
+.alertsNews__header-selector[open] summary::before {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: "";
+    cursor: default;
+}
+
+.alertsNews__header-selector__dropdown {
+    list-style: none;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    input[type="radio"] {
+        -webkit-appearance: none;
+    }
+
+    ::-webkit-details-marker {
+        display: none;
+    }
+}
+
+.alertsNews__header-selector__dropdown__list {
+    position: absolute;
+    top: 66px;
+    left: 0;
+    height: 96px;
+    max-width: 334px;
+    width: 100%;
+
+    li label {
+        width: 100%;
+        height: 48px;
+        display: inline-block;
+        padding: 15px;
+        cursor: pointer;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+
+.alertsNews__title {
+    width: 100%;
+    max-width: breakpoints.$tablet;
+
+    span {
+        font-weight: fonts.$bold;
+        font-size: 20px;
+    }
+
+    margin-bottom: 26px;
+}
+
+.alertsNews__block {
+    border-radius: 10px;
+    box-shadow: 2px 2px 14px 0 rgba(0, 0, 0, 0.1);
+    max-width: breakpoints.$tablet;
+    width: 100%;
+    max-height: 580px;
+    overflow: auto;
+
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.alertsNews__block::-webkit-scrollbar {
+    display: none;
+}
+
+.alertsNews__scope {
+    color: colors.$primary;
+}
+
+.alertsNews__li {
+    list-style-type: none;
+    border-bottom: solid 1px rgba(115, 118, 124, 0.15);
+
+    a {
+        padding: 15px;
+        text-decoration: none;
+        color: colors.$text-color;
+        display: flex;
+        align-items: center;
+        gap: 35px;
+        font-size: 16px;
+        text-align: justify;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+// this is so the last item doesn't render a border
+.alertsNews__block li:last-child {
+    border: none;
+}
+
+.alertsNews__icon {
+    height: 30px;
+    width: 30px;
+    align-self: flex-start;
+}

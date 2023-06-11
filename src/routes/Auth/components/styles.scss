@@ -1,0 +1,177 @@
+@use '../../../styles/breakpoints';
+@use '../../../styles/fonts';
+@use '../../../styles/colors';
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 20px;
+}
+
+.login__title {
+  font-family: fonts.$font-bold;
+  font-weight: fonts.$bold;
+  font-size: 26px;
+  margin: 40px 0 12px 0;
+}
+
+.login__subtitle {
+  font-size: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.maint__subtitle {
+  font-size: 26px;
+  margin: 40px 0 10px 0;
+  text-align: center;
+}
+
+.maint__subtitle__1 {
+  font-size: 26px;
+  margin: 0px 0 70px 0;
+  text-align: center;
+}
+
+.maint-logo {
+  margin: 20px 0 20px 0;
+}
+
+.login__form {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+
+  @media screen and (max-width: breakpoints.$mobile) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.login__email-box,
+.login__password-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+
+  label {
+    font-size: 17px;
+    font-family: fonts.$font-normal;
+    font-weight: fonts.$normal;
+  }
+
+  @media screen and (max-width: breakpoints.$mobile) {
+    gap: 6px;
+
+    label {
+      font-size: 14px;
+    }
+  }
+}
+
+.login__input-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+  width: 100%;
+  height: 72px;
+  box-sizing: border-box;
+  @media screen and (max-width: breakpoints.$mobile) {
+    height: 48px;
+  }
+}
+
+input.login__input-box {
+  padding: 20px;
+  font-size: 20px;
+  border-radius: 10px;
+  border: solid 1px colors.$gray;
+
+  @media screen and (max-width: breakpoints.$mobile) {
+    font-size: 14px;
+  }
+}
+
+.login__toggle-password {
+  border: none;
+  color: colors.$gray;
+  background-color: transparent;
+  position: absolute;
+  right: 20px;
+  top: 57px;
+  cursor: pointer;
+  @media screen and (max-width: breakpoints.$mobile) {
+    right: 10px;
+    top: 37px;
+  }
+}
+
+.login__forgot-password {
+  text-decoration: none;
+  color: colors.$gray;
+  font-size: 15px;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+
+  @media screen and (max-width: breakpoints.$mobile) {
+    font-size: 12px;
+  }
+}
+
+.login__enter-button {
+  margin-top: 30px;
+  justify-content: center;
+  font-weight: fonts.$bold;
+  cursor: pointer;
+}
+
+.login__undertext {
+  font-size: 18px;
+  max-width: 300px;
+  text-align: center;
+}
+
+.undertext__writeus {
+  font-weight: fonts.$bold;
+
+  border-bottom: 1px solid #000000
+}
+
+.login__university-logo {
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+
+.login__footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  max-width: breakpoints.$desktop;
+  width: 100%;
+}
+
+.login__supported-box {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+.login__error {
+  font-family: 'RobotoMedium', sans-serif;
+  color: colors.$primary;
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  display: block;
+}

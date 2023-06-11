@@ -1,0 +1,35 @@
+$primary: #c21832;
+$primaryTransparent: rgba(194, 24, 50, 0.7);
+$secondary: #ffffff;
+$gray: #c4c4c4;
+$background-gray: rgba(196, 196, 196, 0.15);
+$dark-gray: #73767c;
+$text-color: #000000;
+$pale-primary: #fcf5f6;
+$light-pink: #f4d4d4;
+$dark-pink: #df697b;
+$dark-brown: #342a1f;
+$azul: #54bec7;
+$azulTransparent: rgba(84, 190, 199, 0.7);
+$light-brown: #dcb69f;
+$light-violet: #cab8cb;
+$yellow: #FFEE58;
+
+:export {
+  primary: $primary;
+  primaryTransparent: $primaryTransparent;
+  secondary: $secondary;
+  gray: $gray;
+  backgroundGray: $background-gray;
+  darkGray: $dark-gray;
+  textColor: $text-color;
+  palePrimary: $pale-primary;
+  lightPink: $light-pink;
+  darkPink: $dark-pink;
+  darkBrown: $dark-brown;
+  azul: $azul;
+  azulTransparent: $azulTransparent;
+  lightViolet: $light-violet;
+  lightBrown: $light-brown;
+  yellow: $yellow;
+}

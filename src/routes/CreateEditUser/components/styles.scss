@@ -1,0 +1,441 @@
+@use '../../../styles/breakpoints';
+@use '../../../styles/fonts';
+@use '../../../styles/colors';
+
+.userEdit__main-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (max-width: breakpoints.$mobile) {}
+}
+
+.userEdit__body {
+  display: flex;
+  text-decoration: none;
+  font-weight: normal;
+  box-shadow: 2px 2px 14px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  max-width: calc(breakpoints.$tablet - 60px);
+  width: calc(100% - 60px);
+  margin: 30px;
+
+  @media screen and (max-width: breakpoints.$mobile) {
+    max-width: calc(breakpoints.$mobile - 30px);
+    width: calc(100% - 30px);
+  }
+
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+
+  .userEdit__form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    justify-content: space-between;
+
+    input[type="checkbox"] {
+      width: 20px !important;
+      height: 20px !important;
+      box-shadow: none !important;
+    }
+
+    // moving the select arrow to the left a little
+    select {
+      border-right: 10px solid transparent !important;
+      height: 30px;
+      border-radius: 10px;
+      border: none;
+      position: relative;
+      box-shadow: 1px 1px 7px 0 rgba(0, 0, 0, 0.1);
+      padding-left: 10px;
+      font-size: 16px;
+      font-family: fonts.$font-normal;
+      color: colors.$dark-gray;
+      display: flex;
+      align-items: center;
+    }
+
+    // all input date is clickable and will display the date picker
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      position: absolute;
+      left: 0;
+      padding-left: calc(100% - 25px);
+    }
+
+    .userEdit__form-title {
+      font-size: 16px;
+      font-family: fonts.$font-normal;
+      font-weight: fonts.$bold;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @media screen and (max-width: breakpoints.$mobile) {
+        font-size: 13px;
+      }
+    }
+
+    .userEdit__input-container {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      width: 45%;
+      position: relative;
+
+      @media screen and (max-width: breakpoints.$mobile) {
+        width: 100%;
+      }
+
+      .userEdit__input-label {
+        font-size: 16px;
+        font-family: fonts.$font-normal;
+        font-weight: fonts.$bold;
+
+        @media screen and (max-width: breakpoints.$mobile) {
+          font-size: 13px;
+        }
+      }
+
+      .userEdit__input {
+        width: 100%;
+        height: 30px;
+        border-radius: 10px;
+        border: none;
+        position: relative;
+        box-shadow: 1px 1px 7px 0 rgba(0, 0, 0, 0.1);
+        padding-left: 10px;
+        font-size: 16px;
+        font-family: fonts.$font-normal;
+        color: colors.$dark-gray;
+        display: flex;
+        align-items: center;
+      }
+
+      .userEdit__toggle-password {
+        border: none;
+        color: colors.$gray;
+        background-color: transparent;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        right: 5px;
+        bottom: 5px;
+        cursor: pointer;
+      }
+
+      .userEdit__input-extra-info {
+        font-size: 16px;
+        font-family: fonts.$font-normal;
+        color: colors.$dark-gray;
+
+        @media screen and (max-width: breakpoints.$mobile) {
+          font-size: 13px;
+        }
+      }
+    }
+
+    .userEdit__input-container__SUPermissions {
+      width: 100% !important;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+
+      .userEdit__input-label {
+        width: 45%;
+        display: flex;
+        align-items: center;
+      }
+
+      .userEdit__input-extra-info {
+        border-radius: 10px;
+        border: none;
+        position: relative;
+        box-shadow: 1px 1px 7px 0 rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        font-size: 16px;
+        font-family: fonts.$font-normal;
+        color: colors.$dark-gray;
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .userEdit__permissions-factory-search-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      position: relative;
+
+      .userEdit__input-container {
+        position: relative;
+
+        .userEdit__input {
+          border-radius: 10px;
+          border: none;
+          padding: 10px;
+          box-shadow: 1px 1px 7px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .userEdit__input-icon {
+          position: absolute;
+          pointer-events: none;
+          right: 10px;
+          top: 5px;
+          height: 20px;
+          width: 20px;
+        }
+
+        .userEdit__permissions-factory-dropdown {
+          position: absolute;
+          top: 40px;
+          left: 0;
+          max-width: 334px;
+          width: 100%;
+          border: none;
+
+          @media screen and (max-width: breakpoints.$tablet) {
+            max-width: 100%;
+            z-index: 10;
+          }
+
+          li {
+            width: 100%;
+            height: 48px;
+            display: inline-block;
+            padding: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            p {
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              max-width: 77%;
+            }
+
+            span {
+              b {
+                font-weight: 900;
+                font-size: 20px;
+                color: colors.$primary;
+              }
+            }
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background: colors.$primary;
+            border-radius: 5px;
+          }
+
+          li:hover {
+            background-color: rgba(194, 24, 50, 0.15);
+          }
+        }
+      }
+    }
+
+    .userEdit__permission-factories-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      .userEdit__permission-container-factory {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        border-radius: 10px;
+        border: none;
+        position: relative;
+        box-shadow: 1px 1px 7px 0 rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        width: 170px;
+        justify-content: space-between;
+
+        .userEdit__permissions-factory-label {
+          color: colors.$dark-gray;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-width: 72%;
+        }
+
+        .userEdit__permissions-factory-button {
+          border: none;
+          background-color: transparent;
+          height: 30px;
+          width: 30px;
+          cursor: pointer;
+
+          &:hover {
+            border: 1px solid colors.$gray;
+            border-radius: 5px;
+          }
+
+          .userEdit__permissions-factory-button-icon {
+            height: 100%;
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .userEdit__permissions__available-apps-container {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 20px;
+      flex-direction: column;
+
+      .userEdit__permissions__app-container {
+        border-radius: 10px;
+        border: none;
+        position: relative;
+        box-shadow: 1px 1px 7px 0 rgba(0, 0, 0, 0.1);
+        font-size: 16px;
+        font-family: fonts.$font-normal;
+        color: colors.$dark-gray;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        height: min-content;
+        width: 100%;
+        flex-direction: column;
+
+        .userEdit__permissions__app-container-top {
+          padding: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 10px;
+          width: 100%;
+          flex-wrap: wrap;
+
+          .userEdit__permissions__inputs-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+          }
+        }
+
+        .userEdit__permissions__app-container-bottom {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          gap: 10px;
+          padding: 10px 10px 10px 0;
+          position: relative;
+          width: 90%;
+          margin-left: 50px;
+
+          .userEdit__permissions__app-title {
+            position: relative;
+
+            &::after {
+              height: 1px;
+              width: 15px;
+              background-color: colors.$dark-gray;
+              position: absolute;
+              bottom: 50%;
+              left: -35px;
+              content: "";
+            }
+          }
+
+          &::after {
+            height: 100%;
+            width: 1px;
+            background-color: colors.$dark-gray;
+            position: absolute;
+            bottom: 10px;
+            left: -25px;
+            content: "";
+          }
+        }
+      }
+    }
+  }
+
+  .userEdit__permissions-label {
+    font-size: 16px;
+    font-family: fonts.$font-normal;
+    font-weight: fonts.$bold;
+
+    @media screen and (max-width: breakpoints.$mobile) {
+      font-size: 13px;
+    }
+  }
+
+  select {
+    border-right: 10px solid transparent !important
+  }
+}
+
+.userEdit__saveContinueBtn {
+  background-color: colors.$primary;
+  color: colors.$secondary;
+  border-radius: 10px;
+  border: none;
+  width: 180px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  text-decoration: none;
+}
+
+.userEdit__saveContinueBtn-disabled {
+  background-color: colors.$gray;
+  color: colors.$secondary;
+  border-radius: 10px;
+  border: none;
+  width: 180px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  text-decoration: none;
+  cursor: not-allowed;
+}
+
+.userEdit__error-contaier {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+
+  .userEdit__error-image-big {
+    width: 30px;
+  }
+
+  .userEdit__error-text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    max-width: 300px;
+
+    .userEdit__error-subtext {
+      line-height: 22px;
+    }
+  }
+}

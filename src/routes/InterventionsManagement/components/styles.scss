@@ -1,0 +1,166 @@
+@use '../../../styles/breakpoints';
+@use '../../../styles/fonts';
+@use '../../../styles/colors';
+
+.interventions__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (max-width: breakpoints.$mobile) {}
+}
+
+.interventions__body__content {
+  max-width: breakpoints.$tablet;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 30px;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: breakpoints.$mobile) {
+    padding: 15px;
+    gap: 20px;
+  }
+}
+
+.interventions__button-wrapper {
+  width: 100%;
+}
+
+.interventions__create-btn {
+  background-color: colors.$primary;
+  color: colors.$secondary;
+  border-radius: 10px;
+  border: none;
+  width: max-content;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  align-self: flex-start !important;
+  text-decoration: none;
+}
+
+.interventions__table {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: normal;
+  box-shadow: 2px 2px 14px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  gap: 20px;
+  color: colors.$text-color;
+  max-width: breakpoints.$tablet;
+  width: 100%;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    height: 7px;
+    background: colors.$secondary;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: colors.$gray;
+  }
+
+  @media screen and (max-width: breakpoints.$tablet) {
+    gap: 10px;
+    font-font-size: 14px;
+  }
+
+  @media screen and (max-width: breakpoints.$mobile) {
+    max-width: breakpoints.$mobile;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .interventions__table__content {
+    text-align: left;
+    width: 100%;
+    table-layout: auto;
+
+    .interventions__table__head {
+      margin-top: 15px;
+      color: colors.$dark-gray;
+      font-weight: bold;
+      border-collapse: collapse;
+      border-bottom: 1px solid rgba(196, 196, 196, 0.15);
+      position: relative;
+
+      .interventions__table__head__row {
+        position: relative;
+
+        .interventions__table__head__cell {
+          padding: 10px;
+          height: 50px;
+          vertical-align: middle;
+          white-space: nowrap;
+        }
+
+        th:first-child {
+          padding-left: 20px;
+        }
+
+        th:last-child {
+          display: flex;
+          align-items: center;
+          background-color: colors.$secondary;
+          justify-content: center;
+          border-left: 1px solid rgba(196, 196, 196, 0.15);
+        }
+      }
+    }
+
+    .interventions__table__body {
+      position: relative;
+
+      .interventions__table__row {
+        position: relative;
+
+        .interventions__table__cell {
+          padding: 10px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          width: 20%;
+
+          .interventions__table__row__button {
+            cursor: pointer;
+            padding: 0;
+
+            .interventions__table__row__button-icon {
+              height: 15px;
+              width: auto;
+            }
+
+            border: none;
+            background-color: transparent;
+          }
+        }
+
+        td:first-child {
+          padding-left: 20px;
+        }
+
+        td:last-child {
+          display: flex;
+          background-color: colors.$secondary;
+          justify-content: center;
+          gap: 5px;
+          border-left: 1px solid rgba(196, 196, 196, 0.15);
+        }
+
+        border-bottom: 1px solid rgba(196, 196, 196, 0.15);
+      }
+
+      tr:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}

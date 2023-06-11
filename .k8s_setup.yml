@@ -1,0 +1,71 @@
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
+metadata:
+  name: $KUBE_NAMESPACE
+  namespace: $KUBE_NAMESPACE
+spec:
+  mtls:
+    mode: STRICT
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: $CI_PROJECT_NAME-svc
+  namespace: $KUBE_NAMESPACE
+  labels:
+    app: $CI_PROJECT_NAME
+    service: $CI_PROJECT_NAME
+spec:
+  ports:
+  - port: 80
+    name: http
+  selector:
+    app: $CI_PROJECT_NAME
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: $CI_PROJECT_NAME-svacc
+  namespace: $KUBE_NAMESPACE
+  labels:
+    account: $CI_PROJECT_NAME
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: $CI_PROJECT_NAME-v1
+  namespace: $KUBE_NAMESPACE
+  labels:
+    app: $CI_PROJECT_NAME
+    version: v1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: $CI_PROJECT_NAME
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: $CI_PROJECT_NAME
+        version: v1
+    spec:
+      serviceAccountName: $CI_PROJECT_NAME-svacc
+      containers:
+      - name: $CI_PROJECT_NAME
+        image: $CI_REGISTRY_IMAGE/$CI_COMMIT_BRANCH:$CI_COMMIT_SHORT_SHA
+        volumeMounts:
+        - name: front-config
+          mountPath: "/usr/share/nginx/html/config.js"
+          subPath: "config.js"
+          readOnly: true
+      volumes:
+        - name: front-config
+          configMap:
+            name: $CI_PROJECT_NAME-properties
+            items:
+            - key: config.js
+              path: config.js
+      imagePullSecrets:
+      - name: gitlab-docker-secret

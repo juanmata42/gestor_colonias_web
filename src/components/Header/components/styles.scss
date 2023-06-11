@@ -1,0 +1,162 @@
+@use '../../../styles/breakpoints';
+@use '../../../styles/fonts';
+@use '../../../styles/colors';
+
+.header{
+    background-color: colors.$primary;
+    height: 100px;
+    padding: 0px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media screen and (min-width: breakpoints.$tablet){
+        padding: 0px calc(((100vw - breakpoints.$tablet) / 2) + 30px);
+    }
+    a{
+        text-decoration: none;
+    }
+}
+.header-back-nav{
+    color: colors.$secondary;
+    display: flex;
+    gap:16px;
+    font-weight: fonts.$bold;
+    img{
+        align-self:flex-start;
+    }
+}
+.header__user-img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: solid 3px colors.$secondary;
+    background-color: colors.$secondary;
+    cursor: pointer;
+}
+.header__user-popup{
+    position: absolute;
+    top: 110px;
+    right: 30px;
+    width: 330px;
+    background-color: colors.$secondary;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 2px 14px 0 rgba(0, 0, 0, 0.1);
+    border: solid 1px rgba(115, 118, 124, 0.2);
+    z-index: 10;
+    @media screen and (min-width: breakpoints.$tablet) {
+            right: calc(((100vw - breakpoints.$tablet) / 2) + 30px);
+        }
+    @media screen and (max-width: breakpoints.$mobile) {
+            width: 300px;
+            right: 15px;
+        }
+}
+.user-popup__top-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+    gap:24px;
+    @media screen and (max-width: breakpoints.$mobile) {
+            gap: 20px;
+        }
+}
+.user-popup__user-img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: solid 3px colors.$primary;
+    background-color: colors.$secondary;
+    cursor: pointer;
+    
+    @media screen and (max-width: breakpoints.$mobile) {
+            width: 60px;
+            height: 60px;
+        }
+}
+.user-popup__user-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+    @media screen and (max-width: breakpoints.$mobile) {
+            gap: 9px;
+        }
+}
+.user-popup__user-name{
+    font-size: 17px;
+    font-weight: fonts.$bold;
+    @media screen and (max-width: breakpoints.$mobile) {
+            font-size: 15px;
+        }
+}
+.user-popup__user-email {
+    font-size: 15px;
+    color: colors.$dark-gray;
+    @media screen and (max-width: breakpoints.$mobile) {
+            font-size: 13px;
+        }
+}
+.user-popup__middle-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 24px 20px;
+    border-bottom: 1px solid rgba(115, 118, 124, 0.2);
+    border-top: 1px solid rgba(115, 118, 124, 0.2);
+    gap:24px;
+    @media screen and (max-width: breakpoints.$mobile) {
+            padding: 24px 15px;
+        }
+    a{
+        text-decoration: none;
+        color: colors.$text-color;
+        font-size: 16px;
+        font-weight: fonts.$bold;
+        @media screen and (max-width: breakpoints.$mobile) {
+                font-size: 15px;
+            }
+    }
+}
+
+.user-popup__bottom-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.user-popup__logout-button{
+    width: 100%;
+    height: 46px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    font-weight: fonts.$bold;
+    padding: 15px;
+}
+.user-popup__link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: colors.$text-color;
+    font-size: 15px;
+    color: colors.$dark-gray;
+    gap: 5px;
+    @media screen and (max-width: breakpoints.$mobile) {
+            font-size: 13px;
+        }
+    .user-popup__link-icon{
+        height: 25px;
+        width: auto;
+        @media screen and (max-width: breakpoints.$mobile) {
+            height: 20px;
+        }
+    }
+}

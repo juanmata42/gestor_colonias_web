@@ -1,0 +1,238 @@
+@use '../../../styles/breakpoints';
+@use '../../../styles/fonts';
+@use '../../../styles/colors';
+
+.userDisplay__main-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (max-width: breakpoints.$mobile) {}
+}
+
+.userDisplay__info-body {
+  display: flex;
+  text-decoration: none;
+  font-weight: normal;
+  box-shadow: 2px 2px 14px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 0 10px 10px 10px;
+  padding: 20px;
+  max-width: calc(breakpoints.$tablet - 60px);
+  width: calc(100% - 60px);
+  margin: 30px;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  position: relative;
+  justify-content: space-between;
+
+  @media screen and (max-width: breakpoints.$mobile) {
+    max-width: calc(breakpoints.$mobile - 30px);
+    width: calc(100% - 30px);
+  }
+
+  .userDisplay__info-body__tab-container {
+    position: absolute;
+    top: -38px;
+    left: 0;
+
+    .userDisplay__info-body__tab-button {
+      background-color: colors.$secondary;
+      border-radius: 10px 10px 0 0;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-family: fonts.$font-normal;
+      font-weight: fonts.$bold;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0px -2px 5px 0 rgba(0, 0, 0, 0.1);
+
+      &:hover {
+        color: colors.$primary;
+      }
+
+      &.active {
+        color: colors.$primary;
+      }
+
+      &.inactive {
+        background-color: colors.$gray;
+      }
+    }
+  }
+
+  .userDisplay__info-body-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+
+    .userDisplay__permission-factories-container {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      position: relative;
+      justify-content: space-between;
+
+      .userDisplay__permissions-factory {
+        font-size: 16px;
+        font-family: fonts.$font-normal;
+        font-weight: fonts.$bold;
+        border-radius: 10px;
+        border: none;
+        box-shadow: 1px 1px 7px 0 rgba(0, 0, 0, 0.1);
+        padding: 10px;
+
+        @media screen and (max-width: breakpoints.$mobile) {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+
+  .userDisplay__info-container {
+    padding: 10px;
+    gap: 10px;
+    display: flex;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 1px 1px 7px 0 rgba(0, 0, 0, 0.1);
+    padding: 10px;
+
+    .userDisplay__info-label {
+      font-size: 16px;
+      font-family: fonts.$font-normal;
+      font-weight: fonts.$bold;
+
+      @media screen and (max-width: breakpoints.$mobile) {
+        font-size: 13px;
+      }
+    }
+  }
+
+  .userDisplay__permissions__available-apps-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    .userDisplay__permissions__app-container {
+      border-radius: 10px;
+      border: none;
+      position: relative;
+      box-shadow: 1px 1px 7px 0 rgba(0, 0, 0, 0.1);
+      font-size: 16px;
+      font-family: fonts.$font-normal;
+      color: colors.$dark-gray;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      height: min-content;
+      width: 100%;
+      flex-direction: column;
+      padding: 10px;
+
+      .userDisplay__permissions__app-container-top {
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        width: 100%;
+        flex-wrap: wrap;
+
+        .userDisplay__permissions__app-title {
+          position: relative;
+          font-size: 16px;
+          font-family: fonts.$font-normal;
+          font-weight: fonts.$bold;
+          color: colors.$text-color;
+
+          @media screen and (max-width: breakpoints.$mobile) {
+            font-size: 13px;
+          }
+        }
+      }
+
+      .userDisplay__permissions__app-container-bottom {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 10px 10px 0;
+        position: relative;
+        width: 90%;
+        margin-left: 50px;
+
+        .userDisplay__permissions__app-title {
+          position: relative;
+          font-size: 16px;
+          font-family: fonts.$font-normal;
+          font-weight: fonts.$bold;
+
+          @media screen and (max-width: breakpoints.$mobile) {
+            font-size: 13px;
+          }
+
+          &::after {
+            height: 1px;
+            width: 15px;
+            background-color: colors.$dark-gray;
+            position: absolute;
+            bottom: 50%;
+            left: -35px;
+            content: "";
+          }
+        }
+
+        &::after {
+          height: 100%;
+          width: 1px;
+          background-color: colors.$dark-gray;
+          position: absolute;
+          bottom: 10px;
+          left: -25px;
+          content: "";
+        }
+      }
+    }
+  }
+
+  .userDisplay__toEditBtn-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .userDisplay__toEditBtn {
+      background-color: colors.$primary;
+      color: colors.$secondary;
+      border-radius: 10px;
+      border: none;
+      width: max-content;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      text-decoration: none;
+    }
+  }
+}
+
+.userDisplay__permissions-label {
+  font-size: 16px;
+  font-family: fonts.$font-normal;
+  font-weight: fonts.$bold;
+
+  @media screen and (max-width: breakpoints.$mobile) {
+    font-size: 13px;
+  }
+}

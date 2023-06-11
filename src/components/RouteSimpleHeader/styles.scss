@@ -1,0 +1,67 @@
+@use '../../styles/breakpoints';
+@use '../../styles/fonts';
+@use '../../styles/colors';
+
+.routeHeader {
+  max-width: breakpoints.$tablet;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 30px;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: breakpoints.$mobile) {
+    padding: 15px;
+    gap: 20px;
+  }
+}
+
+.routeHeader__title__container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.routeHeader__title {
+  font-size: 20px;
+  font-family: fonts.$font-normal;
+  font-weight: fonts.$bold;
+
+  @media screen and (max-width: breakpoints.$mobile) {
+    font-size: 15px;
+  }
+}
+
+.routeHeader__subTitle {
+  font-size: 16px;
+  font-family: fonts.$font-normal;
+  color: colors.$dark-gray;
+
+  @media screen and (max-width: breakpoints.$mobile) {
+    font-size: 13px;
+  }
+}
+
+.routeHeader__logo {
+  display: flex;
+  flex-direction: row;
+}
+
+.routeHeader__university-logo {
+  height: 48px;
+  margin: 1px auto;
+
+  @media screen and (max-width: breakpoints.$mobile) {
+    height: 36px;
+  }
+}
+
+.routeHeader__supported-box__img {
+  margin: 4px auto 4px 15px;
+
+  @media screen and (max-width: breakpoints.$mobile) {
+    height: 26px;
+  }
+}

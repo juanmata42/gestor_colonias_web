@@ -1,0 +1,142 @@
+@use '../../styles/breakpoints';
+@use '../../styles/fonts';
+@use '../../styles/colors.module';
+
+
+.pieChart__svg {
+    display: block;
+    max-height: 94px;
+    width: 200px;
+
+    @media screen and (max-width: breakpoints.$mobile) {
+        max-height: 70px;
+        max-width: 150px;
+    }
+}
+
+// tool data table
+// only if it is inside an element
+.toolTable-anti-shadow {
+    box-shadow: none !important;
+}
+
+.toolTable__container {
+    width: 100%;
+    flex-basis: 48%;
+    flex-grow: 1;
+    border-spacing: 0;
+    box-shadow: 2px 2px 14px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+// table header classes
+.toolTable__header {
+    color: colors.$dark-gray;
+    border-bottom: 1px solid colors.$gray;
+}
+
+.toolTable__header-row-default {
+    height: 45px;
+
+    th {
+        font-size: 14px;
+        vertical-align: middle;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        background-color: colors.$secondary;
+        border-radius: 10px;
+        font-weight: fonts.$bold;
+    }
+
+    :first-child {
+        padding-left: 15px;
+        text-align: left;
+    }
+}
+
+.toolTable__header-row-total {
+    height: 45px;
+
+    th {
+        font-size: 14px;
+        vertical-align: middle;
+        text-align: center;
+        font-weight: fonts.$bold;
+    }
+
+    :first-child {
+        padding-left: 15px;
+        text-align: left;
+    }
+}
+
+.toolTable__header-row-total-split {
+    height: 26px;
+}
+
+.toolTable__header-key-default {}
+
+.toolTable__header-value-default {
+    text-align: center
+}
+
+.toolTable__header-key-total {}
+
+.toolTable__header-value-total {
+    text-align: center
+}
+
+.toolTable__header-value-total-split {
+    text-align: center;
+    font-size: 10px;
+    vertical-align: middle;
+    padding: 5px 2px 5px 2px;
+}
+
+//table body classes
+.toolTable__body {
+    :last-child {
+        border: none;
+    }
+}
+
+.toolTable__body-row {
+    border-bottom: 1px solid colors.$gray;
+    height: 40px;
+    position: relative;
+    td {
+        font-size: 14px;
+        vertical-align: middle;
+        text-align: center;
+        font-weight: fonts.$bold;
+    }
+
+    :first-child {
+        text-align: left;
+    }
+}
+
+.toolTable__body-key-default {
+    width: 70%;
+    padding: 5px 5px 5px 15px;
+}
+
+.toolTable__body-value-default {
+    text-align: center
+}
+
+.toolTable__body-key-total-split {
+    padding: 5px 5px 5px 15px;
+}
+
+.toolTable__body-value-total-split {
+    text-align: center
+}
+
+.toolTable__body-value-total-split-gray {
+    text-align: center;
+    background-color: colors.$background-gray;
+}
+
+// bar chart

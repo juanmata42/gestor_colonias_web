@@ -1,0 +1,394 @@
+@use '../../../styles/breakpoints';
+@use '../../../styles/fonts';
+@use '../../../styles/colors.module';
+
+.HealthIssuesTool__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.HealthIssuesTool__header {
+  max-width: breakpoints.$tablet;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 30px;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: breakpoints.$mobile) {
+    padding: 15px;
+    gap: 20px;
+  }
+}
+
+.HealthIssuesTool__header-title-subtitle {
+  flex-grow: 2;
+  min-width: 155px;
+
+  @media screen and (max-width: breakpoints.$mobile) {
+    min-width: 135px;
+  }
+}
+
+.HealthIssuesTool__header-title {
+  font-size: 20px;
+  margin-bottom: 8px;
+
+  @media screen and (max-width: breakpoints.$mobile) {
+    font-size: 18px;
+  }
+}
+
+.HealthIssuesTool__header-title-bold {
+  font-weight: fonts.$bold;
+}
+
+.HealthIssuesTool__header-subtitle {
+  font-size: 15px;
+  color: colors.$dark-gray;
+}
+
+.HealthIssuesTool__header-logo {
+  display: flex;
+  flex-direction: row;
+}
+
+.HealthIssuesTool__header-logo-dropdown-menu {
+  display: flex;
+  flex-direction: row;
+  max-width: 400px;
+  justify-content: space-between;
+  width: 60%;
+  gap: 10px;
+}
+
+.HealthIssuesTool__header-university-logo {
+  height: 48px;
+  margin: 1px auto;
+
+  @media screen and (max-width: breakpoints.$mobile) {
+    height: 36px;
+  }
+}
+
+.HealthIssuesTool__header-supported-box__img {
+  margin: 4px auto 4px 15px;
+
+  @media screen and (max-width: breakpoints.$mobile) {
+    height: 26px;
+  }
+}
+
+.HealthIssuesTool__header-dropdown-menu-container {
+  max-width: 230px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  @media screen and (max-width: breakpoints.$mobile) {
+    max-width: 100%;
+  }
+}
+
+.HealthIssuesTool__header-dropdown-menu {
+  width: 100%;
+  border-radius: 10px;
+  height: 48px;
+  padding-left: 15px;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  appearance: none;
+  background: url('../../../assets/down-arrow-simple-red.svg') no-repeat;
+  background-size: 15px;
+  background-position: right 10px center;
+  font-size: 15px;
+}
+
+.HealthIssuesTool__header-selector[open] summary::before {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: '';
+  cursor: default;
+}
+
+.HealthIssuesTool__header-selector__dropdown {
+  list-style: none;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  input[type='radio'] {
+    -webkit-appearance: none;
+  }
+
+  ::-webkit-details-marker {
+    display: none;
+  }
+}
+
+.HealthIssuesTool__header-selector__dropdown__list {
+  position: absolute;
+  top: 66px;
+  left: 0;
+  border: solid 1px rgba(194, 24, 50, 0.15);
+  max-width: 334px;
+  width: 100%;
+
+  @media screen and (max-width: breakpoints.$tablet) {
+    max-width: 100%;
+    z-index: 10;
+  }
+
+  li label {
+    width: 100%;
+    height: 48px;
+    display: inline-block;
+    padding: 15px;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: colors.$primary;
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(194, 24, 50, 0.15);
+  }
+
+  li:hover {
+    background-color: colors.$pale-primary;
+  }
+}
+
+.HealthIssuesTool__header-dropdown-menu-symbol {
+  font-size: 18px;
+  float: right;
+}
+
+.HealthIssuesTool__map {
+  height: 240px;
+  width: 100%;
+}
+
+.HealthIssuesTool__summary,
+.HealthIssuesTool__table,
+.HealthIssuesTool__bar-table__container {
+  border-radius: 10px;
+  box-shadow: 2px 2px 14px 0 rgba(0, 0, 0, 0.1);
+}
+
+.HealthIssuesTool__summary {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 15px;
+  max-width: calc(breakpoints.$tablet - 60px);
+  width: 100%;
+  margin: 25px;
+
+  @media screen and (max-width: breakpoints.$tablet) {
+    width: calc(100vw - 60px);
+  }
+
+  @media screen and (max-width: breakpoints.$mobile) {
+    margin: 15px;
+    width: calc(100vw - 40px);
+    height: 150px;
+  }
+}
+
+.HealthIssuesTool__summary-menu-info {
+  max-width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.HealthIssuesTool__summary-menu {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.HealthIssuesTool__summary-menu-item,
+.HealthIssuesTool__summary-menu-item-selected {
+  display: inline-block;
+  font-size: 15px;
+  padding-bottom: 4px;
+  font-weight: fonts.$bold;
+  color: colors.$dark-gray;
+}
+
+.HealthIssuesTool__summary-menu-item-selected {
+  color: colors.$primary;
+  border-bottom: 3px solid colors.$primary;
+}
+
+.HealthIssuesTool__summary-info {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+}
+
+.HealthIssuesTool__summary-info-current,
+.HealthIssuesTool__summary-info-total {
+  width: 100%;
+}
+
+.HealthIssuesTool__summary-info-total,
+.HealthIssuesTool__summary-info-slash {
+  color: colors.$gray;
+}
+
+.HealthIssuesTool__summary-info-slash {
+  font-size: 40px;
+  font-weight: fonts.$bold;
+  width: 5%;
+  margin: 15px;
+}
+
+.HealthIssuesTool__summary-info-current-amount,
+.HealthIssuesTool__summary-info-total-amount {
+  font-size: 40px;
+  font-weight: fonts.$bold;
+  margin-bottom: 7px;
+  margin-top: 20px;
+
+  @media screen and (max-width: breakpoints.$mobile) {
+    font-size: 32px;
+  }
+}
+
+.HealthIssuesTool__summary-info-current-title,
+.HealthIssuesTool__summary-info-current-title__bold,
+.HealthIssuesTool__summary-info-total-title,
+.HealthIssuesTool__summary-info-total-title__bold {
+  font-size: 16px;
+  width: 100%;
+
+  @media screen and (max-width: breakpoints.$mobile) {
+    font-size: 10px;
+  }
+}
+
+.HealthIssuesTool__summary-info-current-title__bold,
+.HealthIssuesTool__summary-info-total-title__bold {
+  font-weight: fonts.$bold;
+  margin-bottom: 5px;
+}
+
+.HealthIssuesTool__pie {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 30px;
+  align-items: center;
+  padding-left: 15px;
+  justify-content: center;
+
+  @media screen and (max-width: breakpoints.$mobile) {
+    gap: 15px;
+    flex-wrap: wrap;
+    max-width: 155px;
+    width: 100%;
+  }
+}
+
+.HealthIssuesTool__pie__svg {
+  max-height: 94px;
+  max-width: 182px;
+
+  @media screen and (max-width: breakpoints.$mobile) {
+    max-height: 70px;
+    max-width: 140px;
+  }
+}
+
+.HealthIssuesTool__table-bar__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: calc(breakpoints.$tablet - 60px);
+  width: 100%;
+  gap: 24px;
+  margin-bottom: 30px;
+
+  @media screen and (max-width: breakpoints.$tablet) {
+    width: calc(100vw - 60px);
+  }
+
+  @media screen and (max-width: breakpoints.$mobile) {
+    margin: 15px;
+    width: calc(100vw - 40px);
+  }
+}
+
+.HealthIssuesTool__table,
+.HealthIssuesTool__line,
+.HealthIssuesTool__bar-table__container {
+  min-width: 300px;
+  flex-grow: 1;
+  width: 100%;
+  flex-basis: 48%;
+
+  @media screen and (max-width: breakpoints.$mobile) {
+    min-width: 280px;
+  }
+}
+
+.HealthIssuesTool__bar-title {
+  font-weight: fonts.$bold;
+}
+
+.HealthIssuesTool__bar-table__filter {
+  background-color: colors.$background-gray;
+  padding: 5px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  margin: 10px;
+  margin-left: auto;
+  width: max-content;
+  border-radius: 10px;
+}
+
+.HealthIssuesTool__bar-table__filter-button-selected,
+.HealthIssuesTool__bar-table__filter-button {
+  padding: 5px;
+  margin: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  border: none;
+  background-color: transparent;
+}
+
+.HealthIssuesTool__bar-table__filter-button-selected {
+  background-color: white;
+  border: 0 solid white;
+}
+
+.HealthIssuesTool__bar-title {
+  font-weight: fonts.$bold;
+  padding-bottom: 10px;
+}
+
+.HealthIssuesTool__bar {
+  width: 100%;
+  padding: 0 10px 10px 15px;
+}

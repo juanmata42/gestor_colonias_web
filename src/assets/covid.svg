@@ -1,0 +1,28 @@
+<svg width="75" height="92" viewBox="0 0 75 92" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(1.357 1)" stroke="#000" stroke-width="1.749" fill="none" fill-rule="evenodd">
+        <path fill="#FFF" fill-rule="nonzero" d="M23.918 13.295h17.274v15.126H23.918zM23.918 28.421h17.274V60.83H23.918z"/>
+        <path fill="#C21832" fill-rule="nonzero" d="M23.918 60.83h8.637V90h-8.637zM32.555 60.83h8.637V90h-8.637z"/>
+        <path d="M23.918 74.874h8.637M32.555 74.874h8.634"/>
+        <path fill="#C21832" fill-rule="nonzero" d="M41.189 28.421h6.478V60.83h-6.478z"/>
+        <path d="M41.189 44.626h6.478"/>
+        <path fill="#C21832" fill-rule="nonzero" d="M17.44 28.421h6.478V60.83H17.44z"/>
+        <path d="M17.44 44.626h6.478"/>
+        <path fill="#54BEC7" fill-rule="nonzero" d="M27.147 21.105h10.814v7.316H27.147z"/>
+        <path d="m27.147 21.105-3.229-3.102M37.961 21.105l3.228-3.102"/>
+        <ellipse fill="#FFF" fill-rule="nonzero" cx="59.202" cy="13.173" rx="9.671" ry="9.678"/>
+        <ellipse fill="#FFF" fill-rule="nonzero" cx="57.823" cy="13.173" rx="1.382" ry="1.383"/>
+        <ellipse fill="#FFF" fill-rule="nonzero" cx="61.996" cy="16.222" rx="1.382" ry="1.383"/>
+        <ellipse fill="#FFF" fill-rule="nonzero" cx="57.823" cy="20.655" rx="1.382" ry="1.383"/>
+        <ellipse fill="#FFF" fill-rule="nonzero" cx="62.729" cy="6.825" rx="1.382" ry="1.383"/>
+        <ellipse fill="#FFF" fill-rule="nonzero" cx="50.913" cy="12.968" rx="1.382" ry="1.383"/>
+        <path d="M59.202 3.494V.231M57.66.231h3.088M49.534 13.173H46.27M46.27 14.719v-3.093M59.202 22.851v3.263M60.748 26.114H57.66M68.424 16.094l3.109.985M72 15.605l-.932 2.948M67.69 8.535l2.864-1.567M69.814 5.611l1.482 2.716M64.868 5.327l3.19-4.421M66.805 0l2.507 1.813M53.975 5.032l-2.516-3.918M50.159 1.95 52.76.278M50.843 18.038l-4.029 2.348M47.591 21.722l-1.554-2.672M64.47 21.289l2.808 4.325M68.573 24.772l-2.592 1.684"/>
+        <ellipse fill="#FFF" fill-rule="nonzero" cx="18.028" cy="62.094" rx="12.593" ry="12.602"/>
+        <ellipse fill="#FFF" fill-rule="nonzero" cx="25.102" cy="57.95" rx="1.8" ry="1.801"/>
+        <ellipse fill="#FFF" fill-rule="nonzero" cx="12.494" cy="57.95" rx="1.8" ry="1.801"/>
+        <ellipse fill="#FFF" fill-rule="nonzero" cx="7.947" cy="63.301" rx="1.8" ry="1.801"/>
+        <ellipse fill="#FFF" fill-rule="nonzero" cx="25.102" cy="68.503" rx="1.8" ry="1.801"/>
+        <ellipse fill="#FFF" fill-rule="nonzero" cx="21.832" cy="51.98" rx="1.8" ry="1.801"/>
+        <path d="m27.05 70.889 3.314 3.231M31.769 72.678l-2.808 2.883M26.986 53.234l3.021-2.988M28.593 48.816l2.828 2.862M6.136 57.95l-4.012-1.397M1.461 58.453l1.324-3.804M13.496 73.851l-2.524 6.55M12.85 81.126l-3.754-1.448M18.513 74.687l.163 4.249M20.687 78.857l-4.024.155M29.402 56.684l5.473-2.602M34.01 52.263l1.73 3.638M11.781 51.149l-3.88-6.792M6.153 45.354l3.495-1.997M5.797 65.102.482 66.409M.961 68.365 0 64.453"/>
+        <ellipse fill="#FFF" fill-rule="nonzero" cx="16.444" cy="66.705" rx="1.8" ry="1.801"/>
+    </g>
+</svg>

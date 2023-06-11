@@ -1,0 +1,136 @@
+@use '../../styles/breakpoints';
+@use '../../styles/fonts';
+@use '../../styles/colors';
+
+.modal__overLays {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.modal__container {
+    width: 400px;
+    height: min-content;
+    background-color: colors.$secondary;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    gap: 20px;
+    z-index: 2;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    @media screen and (max-width: breakpoints.$mobile) {
+        width: 300px;
+        padding: 20px;
+        gap: 10px;
+        height: min-content;
+    }
+
+    .modal__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+
+        @media screen and (max-width: breakpoints.$mobile) {
+            gap: 10px;
+        }
+    }
+}
+
+.modal__close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-weight: fonts.$bold;
+
+    @media screen and (max-width: breakpoints.$mobile) {
+        top: 10px;
+        right: 10px;
+    }
+}
+
+.modal__title {
+    font-size: 20px;
+    font-family: fonts.$font-normal;
+    font-weight: fonts.$bold;
+
+    @media screen and (max-width: breakpoints.$mobile) {
+        font-size: 17px;
+    }
+}
+
+.modal__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    .modal__body__text {
+            font-size: 17px;
+            text-align: center;
+            @media screen and (max-width: breakpoints.$mobile) {
+                font-size: 15px;
+            }
+        }
+    .modal__body__targetName {
+        font-size: 17px;
+        font-family: fonts.$font-normal;
+        font-weight: fonts.$bold;
+
+        @media screen and (max-width: breakpoints.$mobile) {
+            font-size: 15px;
+        }
+    }
+
+    @media screen and (max-width: breakpoints.$mobile) {
+        gap: 10px;
+    }
+}
+
+.modal__body__button-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    .modal__body__button-wrapper__cancel-btn,
+    .modal__body__button-wrapper__action-btn {
+        background-color: colors.$primary;
+        color: colors.$secondary;
+        border-radius: 10px;
+        border: none;
+        width: 130px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        align-self: flex-start !important;
+        font-size: 15px;
+        cursor: pointer;
+        @media screen and (max-width: breakpoints.$mobile) {
+            font-size: 10px;
+            width: 100px;
+            height: 30px;
+        }
+    }
+}

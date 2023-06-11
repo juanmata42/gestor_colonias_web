@@ -1,0 +1,141 @@
+@use '../../../styles/colors';
+@use '../../../styles/breakpoints';
+@use '../../../styles/fonts';
+
+:root {
+  --rmdp-primary-red: #c21832;
+  --rmdp-secondary-red: #ad8787;
+  --rmdp-shadow-red: #cfb6b6;
+  --rmdp-today-red: #c21832;
+  --rmdp-range-red: #f0caca;
+  --rmdp-hover-red: #c21832;
+  --rmdp-deselect-red: #c21832;
+}
+
+.red .rmdp-wrapper {
+  border: 1px solid var(--rmdp-secondary-red);
+  box-shadow: 0 0 5px var(--rmdp-secondary-red);
+}
+
+.red .rmdp-panel-body li {
+  background-color: var(--rmdp-primary-red);
+  box-shadow: 0 0 2px var(--rmdp-secondary-red);
+}
+
+.red .rmdp-week-day {
+  color: var(--rmdp-primary-red);
+}
+
+.red .rmdp-day.rmdp-deactive {
+  color: var(--rmdp-secondary-red);
+}
+
+.red .rmdp-range {
+  background-color: var(--rmdp-range-red);
+  box-shadow: 0 0 3px var(--rmdp-shadow-red);
+}
+
+.red .rmdp-arrow {
+  border: solid var(--rmdp-primary-red);
+  border-width: 0 2px 2px 0;
+}
+
+.red .rmdp-arrow-container:hover {
+  background-color: var(--rmdp-primary-red);
+  box-shadow: 0 0 3px var(--rmdp-secondary-red);
+}
+
+.red .rmdp-panel-body::-webkit-scrollbar-thumb {
+  background: var(--rmdp-primary-red);
+}
+
+.red .rmdp-day.rmdp-today span {
+  background-color: var(--rmdp-today-red);
+}
+
+.red .rmdp-rtl .rmdp-panel {
+  border-left: unset;
+  border-right: 1px solid var(--rmdp-secondary-red);
+}
+
+.red .rmdp-day.rmdp-selected span:not(.highlight) {
+  background-color: var(--rmdp-primary-red);
+  box-shadow: 0 0 3px var(--rmdp-shadow-red);
+}
+
+.red .rmdp-day:not(.rmdp-day-hidden) span:hover {
+  background-color: var(--rmdp-hover-red) !important;
+}
+
+.red .b-deselect {
+  color: var(--rmdp-deselect-red);
+  background-color: white;
+}
+
+.red .rmdp-action-button {
+  color: var(--rmdp-primary-red);
+}
+
+.red .rmdp-button:not(.rmdp-action-button) {
+  background-color: var(--rmdp-primary-red);
+}
+
+.red .rmdp-button:not(.rmdp-action-button):hover {
+  background-color: var(--rmdp-deselect-red);
+}
+
+.rmdp-input{
+  width: 230px;
+  border-radius: 10px !important; 
+  height: 48px !important;
+  padding-left: 15px !important;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  appearance: none;
+  background: url('../../../assets/down-arrow-simple-red.svg') no-repeat;
+  background-size: 15px;
+  background-position: right 10px center;
+  font-size: 15px;
+  border: solid 1px #c21832 !important;
+  color: #c21832;
+  margin-left: 15px !important;
+}
+
+.rdmp-container{
+  border-radius: 10px;
+  box-shadow: 2px 2px 14px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 15px;
+  max-width: calc(breakpoints.$tablet - 60px);
+  width: 100%;
+  margin: 25px;
+  margin-bottom: 25px;
+  align-items: center;
+  gap: 30px;
+
+  @media screen and (max-width: 700px) {
+    width: calc(100vw - 60px);
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+  }
+
+  @media screen and (max-width: breakpoints.$mobile) {
+    margin: 15px;
+    width: calc(100vw - 40px);
+    flex-wrap: wrap;
+  }
+}
+
+.rdmp-label{
+  display: inline-block;
+  font-size: 15px;
+  padding-bottom: 4px;
+  padding-top: 15px;
+  font-weight: fonts.$bold;
+  color: colors.$primary;
+  border-bottom: 3px solid colors.$primary;
+}

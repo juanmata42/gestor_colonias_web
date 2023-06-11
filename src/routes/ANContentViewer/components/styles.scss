@@ -1,0 +1,100 @@
+@use '../../../styles/breakpoints';
+@use '../../../styles/fonts';
+@use '../../../styles/colors';
+
+.ANContentViewer__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+
+.ANContentViewer__prevButton,
+.ANContentViewer__nextButton {
+    width: 140px;
+    height: 48px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+
+    img {
+        width: auto;
+        height: 100%;
+    }
+}
+
+.ANContentViewer__prevButton {
+    align-self: flex-start;
+    cursor: pointer;
+}
+
+.ANContentViewer__nextButton {
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+.ANContentViewer__scope {
+    margin-left: 30px;
+    color: colors.$primary;
+}
+
+.ANContentViewer__block {
+    border-radius: 10px;
+    box-shadow: 2px 2px 14px 0 rgba(0, 0, 0, 0.1);
+    max-width: breakpoints.$tablet;
+    width: 100%;
+    max-height: 580px;
+    overflow: auto;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+    padding: 20px 30px;
+    // qwerty no need of this if html comes preformatted
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.ANContentViewer__block::-webkit-scrollbar {
+    display: none;
+}
+
+.ANContentViewer__block-heading {
+    width: 100%;
+    color: colors.$dark-gray;
+    font-weight: fonts.$bold;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ANContentViewer__block-title {
+    font-family: fonts.$font-bold;
+    font-weight: fonts.$bold;
+    font-size: 24px;
+}
+
+.ANContentViewer__block-text {
+    font-size: 16px;
+    text-align: justify;
+    line-height: 1.75;
+}
+
+.AnContentViewer__block-img {
+    width: max-content;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    align-self: center;
+}
+
+.ANContentViewer__footer {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: breakpoints.$tablet;
+    gap: 30px;
+}

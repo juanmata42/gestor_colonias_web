@@ -1,0 +1,107 @@
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  name: $KUBE_NAMESPACE-gateway
+  namespace: $KUBE_NAMESPACE
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+  - hosts:
+    - '*.$KUBE_NAMESPACE.$KUBE_INGRESS_BASE_DOMAIN'
+    port:
+      name: http
+      number: 80
+      protocol: HTTP
+---
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: $CI_PROJECT_NAME-vs
+  namespace: $KUBE_NAMESPACE
+spec:
+  gateways:
+  - $KUBE_NAMESPACE-gateway
+  hosts:
+  - '$SUB_DOMAIN.$KUBE_INGRESS_BASE_DOMAIN'
+  http:
+  - match:
+    - uri:
+        prefix: /
+    route:
+    - destination:
+        host: $CI_PROJECT_NAME-svc
+        port:
+          number: 80
+---
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
+metadata:
+  name: $KUBE_NAMESPACE
+  namespace: $KUBE_NAMESPACE
+spec:
+  mtls:
+    mode: STRICT
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: $CI_PROJECT_NAME-svc
+  namespace: $KUBE_NAMESPACE
+  labels:
+    app: $CI_PROJECT_NAME
+    service: $CI_PROJECT_NAME
+spec:
+  ports:
+  - port: 80
+    name: http
+  selector:
+    app: $CI_PROJECT_NAME
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: $CI_PROJECT_NAME-svacc
+  namespace: $KUBE_NAMESPACE
+  labels:
+    account: $CI_PROJECT_NAME
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: $CI_PROJECT_NAME-v1
+  namespace: $KUBE_NAMESPACE
+  labels:
+    app: $CI_PROJECT_NAME
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: $CI_PROJECT_NAME
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: $CI_PROJECT_NAME
+        version: v1
+    spec:
+      serviceAccountName: $CI_PROJECT_NAME-svacc
+      containers:
+      - name: $CI_PROJECT_NAME
+        image: $CI_REGISTRY_IMAGE/$CI_COMMIT_BRANCH:$CI_COMMIT_SHORT_SHA
+        volumeMounts:
+        - name: front-config
+          mountPath: "/usr/share/nginx/html/config.js"
+          subPath: "config.js"
+          readOnly: true
+      volumes:
+        - name: front-config
+          configMap:
+            name: $CI_PROJECT_NAME-properties
+            items:
+            - key: config.js
+              path: config.js
+
+      imagePullSecrets:
+      - name: gitlab-docker-secret
