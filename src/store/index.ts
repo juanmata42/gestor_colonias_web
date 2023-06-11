@@ -4,27 +4,13 @@ import session, { SESSION_LOGOUT } from './session';
 import i18n from './i18n';
 import loading from './loading';
 import initialState from './initialState';
-import news from './news';
-import covidTool from './covidTool';
-import factories from './factories';
-import healthIssuesTool from './healthIssuesTool';
-import minorInjuriesTool from './minorInjuriesTool';
-import iloTool from './iloTool';
 import adminTool from './adminTool';
-import apps from './apps';
 
 const combinedReducer = combineReducers({
   session,
   i18n,
   loading,
-  news,
-  covidTool,
-  factories,
-  healthIssuesTool,
-  minorInjuriesTool,
-  iloTool,
   adminTool,
-  apps,
 });
 
 //* RCT* --> This should not be any type, but typescript is not happy and me neither

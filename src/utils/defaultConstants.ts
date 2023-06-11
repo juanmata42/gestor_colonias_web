@@ -1,4 +1,4 @@
-import { EN_LANGUAGE } from './language';
+import { ES_LANGUAGE } from './language';
 
 declare global {
   interface Window {
@@ -10,7 +10,7 @@ declare global {
 
 const constants = {
   // The default language to use when none is specified
-  DEFAULT_LANGUAGE: EN_LANGUAGE,
+  DEFAULT_LANGUAGE: ES_LANGUAGE,
   // The default backend url to use when none is specified
   DEFAULT_BACKEND_URL: `${window.MAIN_API_URL}/api`,
   // The default API CMS url to use when none is specified

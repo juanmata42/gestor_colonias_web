@@ -1,8 +1,8 @@
 import constants from './defaultConstants';
 
 // *RCT* --> Only english language must be able for the moment
-export const EN_LANGUAGE = 'EN';
-export const ALLOWED_LANGUAGES = [EN_LANGUAGE];
+export const ES_LANGUAGE = 'ES';
+export const ALLOWED_LANGUAGES = [ES_LANGUAGE];
 
 /**
  * @name getBrowserLanguage

@@ -28,45 +28,4 @@ export type State = {
     localNews: AlertNew[];
     globalNews: AlertNew[];
   },
-  Apps: {
-    appsArray: App[];
-  },
-  CovidTool: {
-    summaryGeneral: Record<string, Record<string, Record<string, number>>>;
-    summaryRegion: Record<string, Record<string, Record<string, Record<string, number>>>>;
-    summaryActivity: Record<string, Record<string, Record<string, Record<string, number>>>>;
-    summaryDate: Record<string, Record<string, number>>;
-  },
-  HealthIssuesTool: {
-    summaryGeneral: Record<string, Record<string, Record<string, number>>>;
-    summaryRegion: Record<string, Record<string, Record<string, Record<string, number>>>>;
-    summaryActivity: Record<string, Record<string, Record<string, Record<string, number>>>>;
-    summaryDate: Record<string, Record<string, number>>;
-    summaryGender: Record<string, Record<string, Record<string, number>>>;
-  },
-  MinorInjuriesTool: {
-    summaryGeneral: Record<string, Record<string, Record<string, number>>>;
-    summaryRegion: Record<string, Record<string, Record<string, Record<string, number>>>>;
-    summaryActivity: Record<string, Record<string, Record<string, Record<string, number>>>>;
-    summaryDate: Record<string, Record<string, number>>;
-    summaryGender: Record<string, Record<string, Record<string, number>>>;
-  },
-  iloTool: {
-    summaryGeneral: Record<string, Record<string, Record<string, number>>>;
-    summaryActivity: Record<string, Record<string, Record<string, number>>>;
-    summaryAge: Record<string, Record<string, Record<string, number>>>;
-    summaryWage: Record<string, Record<string, Record<string, number>>>;
-    summaryOvertime: Record<string, Record<string, Record<string, number>>>;
-    summaryAllowance: Record<string, Record<string, Record<string, number>>>;
-    summaryCostCare: Record<string, Record<string, Record<string, number>>>;
-    summaryDaysAbsence: Record<string, Record<string, Record<string, number>>>;
-    summaryGender: Record<string, Record<string, Record<string, number>>>;
-    summaryPaidAbsence: Record<string, Record<string, Record<string, number>>>;
-    summaryFrequency: Record<string, Record<string, Record<string, number>>>;
-    summaryTitle: Record<string, Record<string, Record<string, number>>>;
-    summaryDate: Record<string, Record<string, number>>;
-  },
-  Factories: {
-    list: any[],
-  }
 };
