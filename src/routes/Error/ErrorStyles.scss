@@ -1,0 +1,33 @@
+@use 'styles/breakpoints';
+@use 'styles/fonts';
+@use 'styles/colors';
+
+.ErrorPage__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+    padding: 50px 30px;
+    background-color: colors.$secondary;
+}
+.ErrorPage__code{
+    font-size: 100px;
+    font-weight: 700;
+    color: colors.$primary;
+    margin: 0;
+    @media screen and (max-width: breakpoints.$mobile){
+        font-size: 80px;
+    }
+}
+.ErrorPage__content{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    ul{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+}

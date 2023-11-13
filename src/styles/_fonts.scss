@@ -1,0 +1,18 @@
+@font-face {
+    font-family: Avenir-book;
+    src: url("./avenir_ff/AvenirLTStd-Book.woff") format("opentype");
+}
+@font-face {
+    font-family: Avenir-black;
+    src: url("./avenir_ff/AvenirLTStd-Black.woff") format("opentype");
+}
+@font-face {
+    font-family: Avenir-roman;
+    src: url("./avenir_ff/AvenirLTStd-Roman.woff") format("opentype");
+}
+
+$bold: 900;
+$semi-bold: 500;
+$normal: normal;
+$font-normal: 'Avenir-book';
+$font-bold: 'Avenir-black';
