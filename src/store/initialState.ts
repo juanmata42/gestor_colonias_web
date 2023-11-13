@@ -3,7 +3,7 @@ import { State } from 'models/state';
 
 const INITIAL_STATE: State = {
   loading: {
-    active: true,
+    active: false,
   },
   literals: {
     language: 'EN',
